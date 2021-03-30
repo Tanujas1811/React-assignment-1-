@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, {Component} from 'react'
+import Main from './components/Main'
+
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  constructor(props){
+      super(props)
+      this.state={
+          activetab:''
+      }
+  }
+  tab1=()=>{
+      console.log('tab1')
+      this.setState({
+          activetab:'tab1'
+      })
+  }
+  tab2(){
+      console.log('tab2')
+      this.setState({
+         activetab: 'tab2'
+      })
+  }
+  tab3(){
+      console.log('tab3')
+      this.setState({
+         activetab:'tab3'
+      })
+  }
+  render(){
+    console.log(this.state)
+      return(
+          <div className="App"><br/><br/><br/>
+              <button onClick={this.tab1}>Tab 1</button>&nbsp;&nbsp;
+              <button onClick={() => this.tab2()}>Tab 2</button>&nbsp;&nbsp;
+              <button onClick={() => this.tab3()}>Tab 3</button>&nbsp;&nbsp;
+              <Main activetab={this.state.activetab}/>
+          </div>
+      )
+  }
 }
-
 export default App;
