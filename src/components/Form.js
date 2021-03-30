@@ -28,7 +28,7 @@ class Form extends Component{
                     <label><input type="radio" disabled name="n1"/ >Option 2</label><br/>
                   </div>
                   <br/><br/>
-                  <select ><option>Maths</option>
+                  <select ><option>Mathematics</option>
                           <option>Physics</option>
                           <option>Chemistry</option>
                           <option>Computer Science</option>
